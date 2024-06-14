@@ -15,8 +15,8 @@ button_summarize = st.sidebar.button("Summarize")
 
 if button_summarize:
     if uploaded_files:
-        content = upload_file(uploaded_files)
-        summary = backend.get_summary(content)
+        #content = upload_file(uploaded_files)
+        summary = backend.get_summary(uploaded_files)
         st.session_state['summaries'].append(summary)
     else:
         st.sidebar.write("No files uploaded yet.")

@@ -12,7 +12,8 @@ async def summarize_document(files: List[UploadFile] = File(...)):
         content = await file.read()
         print(f"Received file: {file.filename}, size: {len(content)} bytes")
         summaries.append({"filename": file.filename, "summary": content[:100]})
-        print("hello")
+
+    #### Add llms call here ####
     summary = str(summaries)
     return JSONResponse(content={"summary": summary}, status_code=200)
 
